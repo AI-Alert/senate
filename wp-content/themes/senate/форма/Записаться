@@ -1,0 +1,4 @@
+<div class='input-wrapper'><span class="input-name"> Номер телефона <strong>*</strong></span>[tel* tel-501 class:input-text]</div>
+<div class="check-wrapper"><label><span class="wpcf7-list-item-label"><span class="input-check__text">Записываясь, вы подтверждаете что ознакомлены с <a href="#">политикой конфиденциальн
+ости</a> и согласны на <a href="#">обработку персональных данных</a></span></span></label></div>
+<div class="submit-wrapper">[submit class:input-submit class:request-button class:btn class:btn-primary "Оставить заявку"]</div>

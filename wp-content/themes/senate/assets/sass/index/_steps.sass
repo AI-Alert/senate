@@ -1,0 +1,122 @@
+.steps
+	padding: 100px 0
+	&-block
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		justify-content: center
+		flex-wrap: wrap
+		margin-bottom: -50px
+		margin-right: -20px
+		margin-left: -20px
+		margin-top: 45px
+		counter-reset: item	
+
+.step
+	display: inline-block
+	margin-right: 20px
+	margin-left: 20px
+	margin-bottom: 50px	
+	width: calc(20% - 40px)		
+	&__icon
+		border-radius: 50%
+		background-color: $body-bg
+		width: 120px
+		height: 120px					
+		position: relative
+		&:before
+			content: counter(item)
+			counter-increment: item		
+			position: absolute
+			display: inline-block
+			font-size: 16px
+			font-weight: 700
+			color: $white
+			line-height: 28px
+			text-align: center
+			width: 28px
+			height: 28px
+			border-radius: 50%
+			background-image: $gradient
+			z-index: 2
+			bottom: 2px
+			right: 5px
+		& > img
+			@extend .absolute-center		
+			max-width: 64px
+			max-height: 64px
+	&__title
+		color: $white
+		font-size: 18px
+		font-weight: 700
+		line-height: 1.45
+		margin-top: 20px
+		a
+			color: $accent-color
+			white-space: nowrap
+			border-bottom: 1px solid $accent-color
+			transition: border-color .2s 
+			&:hover
+				border-color: transparent
+	&__text
+		margin-top: 13px
+		p
+			&:first-child
+				margin-top: 0
+			&:last-child
+				margin-bottom: 0
+
+.is-service
+	.steps
+		margin: 0
+
+@media only screen and (max-width : 1199px)
+
+	.steps
+		padding: 70px 0
+
+@media only screen and (max-width : 991px)	
+
+	.steps-block
+		margin-left: -15px
+		margin-right: -15px
+
+	.step
+		width: calc(33.33% - 30px)
+		margin-left: 15px
+		margin-right: 15px
+
+@media only screen and (max-width : 575px)	
+
+	.steps
+		&-block
+			margin-bottom: -40px
+
+	.step
+		margin-bottom: 40px
+		width: calc(50% - 30px)
+		&__title
+			font-size: 16px
+			margin-top: 15px
+		&__text
+			margin-top: 10px
+		&__icon
+			width: 100px
+			height: 100px
+			& > img
+				max-width: 50px
+				max-height: 50px
+
+@media only screen and (max-width : 374px)	
+
+	.steps
+		&-block
+			margin-left: 0
+			margin-right: 0
+
+	.step
+		margin-left: 0
+		margin-right: 0
+		width: 100%

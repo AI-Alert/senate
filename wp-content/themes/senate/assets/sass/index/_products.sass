@@ -1,0 +1,135 @@
+.products
+	margin: 0
+	padding: 100px 0 
+	&-block
+		margin: 45px -17.5px -35px
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		justify-content: flex-start
+		flex-wrap: wrap
+	&__btn
+		position: relative
+		left: 50%
+		margin-top: 45px
+		transform: translateX(-50%)
+		display: none
+
+.product
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	flex-direction: column
+	align-items: center
+	width: calc(33.33% - 35px)
+	margin: 0 17.5px 35px
+	border: 1px solid $dark-color
+	background-color: $body-bg
+	text-align: center
+	padding: 300px 30px 30px
+	position: relative
+	overflow: hidden
+	&:before
+		position: absolute
+		content: ''
+		top: -45px
+		right: -45px
+		width: 90px
+		height: 90px
+		border-radius: 50%
+		background-image: $gradient
+		transition: all .2s
+	&:hover
+		&:before
+			width: 268px
+			height: 260px
+	&__title
+		display: block
+		text-align: center
+		font-weight: 700
+		color: $white
+		line-height: 1.45
+		font-size: 18px
+		position: relative
+		z-index: 2
+	&__foto
+		position: absolute
+		top: 45px
+		left: 45px
+		right: 45px
+		height: 220px
+		img
+			@extend .object-fit
+			object-fit: contain
+	
+@media only screen and (max-width : 1199px)	
+
+	.products	
+		padding: 70px 0
+		&-block
+			margin-left: -10px
+			margin-right: -10px
+			margin-bottom: -20px
+		&__btn
+			margin-top: 30px
+
+	.product
+		padding: 230px 30px 20px
+		margin: 0 10px 20px
+		width: calc(33.33% - 20px)
+		&__foto
+			top: 30px
+			left: 30px
+			right: 30px
+			height: 175px
+		&__title
+			font-size: 16px
+		&:hover
+			&:before
+				width: 208px
+				height: 200px
+
+@media only screen and (max-width : 991px)	
+
+	.product
+		padding: 210px 20px 20px
+		&__foto
+			top: 20px
+			left: 20px
+			right: 20px
+		&:before
+			display: none
+
+@media only screen and (max-width : 767px)	
+
+	.product
+		width: calc(50% - 20px)	
+
+@media only screen and (max-width : 575px)	
+
+	.product
+		padding-top: 160px
+		&__title
+			font-size: 13px
+		&__foto
+			height: 130px
+
+@media only screen and (max-width : 374px)	
+
+	.products
+		&-block
+			margin-left: 0
+			margin-right: 0
+
+	.product
+		padding-top: 200px
+		width: 100%
+		margin: 0 0 20px
+		&__title
+			font-size: 16px
+		&__foto
+			height: 170px

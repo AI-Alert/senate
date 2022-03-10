@@ -1,0 +1,170 @@
+.fancybox-is-open .fancybox-bg
+	background-color: $dark-color
+	opacity: .8
+
+.fancybox-slide>*
+	margin: 15px 0	
+
+.popup		
+	background-color: $body-bg
+	position: relative		
+	padding: 40px 45px 45px
+	overflow: hidden	
+	border: none	
+	width: 940px			
+	text-align: center
+	&__close
+		position: absolute
+		display: inline-block		
+		background-color: transparent
+		box-shadow: none
+		border: none
+		right: 10px
+		top: 10px
+		cursor: pointer
+		padding: 0
+		height: 24px
+		width: 24px
+		.svg
+			width: 24px
+			height: 24px
+			@extend .absolute-center
+			path
+				transition: fill .2s 
+				fill: $text-color
+		&:hover
+			.svg
+				path
+					fill: url(#paint1_linear)
+	&__title
+		text-align: center
+	&__subtitle		
+		margin-top: 12px
+	.fancybox-close-small	
+		display: none			
+	.form
+		width: 100%		
+		margin-top: 30px
+		.form-inputs
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			align-items: center
+			justify-content: center		
+			margin-left: -10px
+			margin-right: -10px
+			.input-wrapper
+				width: calc(33.33% - 20px)
+				margin: 0 10px 20px
+		.submit-wrapper
+			flex-shrink: 0
+			margin-left: 20px
+			input[type=submit]
+				width: 270px			
+		.form-foot
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			align-items: center
+			width: 100%
+			justify-content: space-between
+			margin-top: 20px
+
+	&--is-callback
+		width: 406px
+		padding: 40px 55px 45px
+		.form
+			.form-block
+				display: block
+			.submit-wrapper
+				margin-left: 0px
+				margin-top: 20px
+				input[type=submit]
+					width: 100%		
+			.check-wrapper
+				margin-top: 25px
+
+	&--is-thanks
+		background-image: url('../img/thanks-icon.svg')
+		background-repeat: no-repeat
+		background-size: 114px 109px
+		background-position: top 45px center
+		width: 406px
+		padding: 180px 50px 45px
+
+@media only screen and (max-width : 991px)
+
+	.popup
+		width: 100%
+		max-width: 95%
+		padding: 35px 40px 40px
+		.form
+			.form-block
+				display: -webkit-flex
+				display: -moz-flex
+				display: -ms-flex
+				display: -o-flex
+				display: flex
+				align-items: flex-start
+				justify-content: space-between
+			.form-inputs
+				flex-direction: column
+				margin-left: 0
+				margin-right: 15px
+				width: calc(50% - 15px)
+				flex-shrink: 0
+				.input-wrapper
+					width: 100%
+					margin-left: 0
+					margin-right: 0
+					margin-bottom: 15px
+			textarea
+				height: 195px
+			.form-foot
+				input[type=submit]
+					width: 210px
+		&--is-callback
+			width: 406px		
+			.form
+				.form-block
+					display: block
+		&--is-thanks
+			width: 406px
+			padding: 180px 50px 45px
+
+@media only screen and (max-width : 767px)
+
+	.popup
+		.form
+			.form-foot
+				flex-wrap: wrap
+				justify-content: flex-end
+				.custom-checkbox
+					width: 100%
+					br
+						display: none
+				.submit-wrapper
+					margin-top: 20px
+					margin-left: 0
+
+@media only screen and (max-width : 575px)
+
+	.popup
+		padding: 35px 25px
+		.form
+			.form-block
+				flex-direction: column
+			.form-inputs
+				flex-direction: column				
+				margin-right: 0
+				width: 100%
+				margin-bottom: 0
+			.form-foot
+				justify-content: center
+
+		&--is-thanks
+			padding: 180px 25px 35px

@@ -1,0 +1,88 @@
+.certificates
+	margin: 0
+	padding: 100px 0
+	&-wrap
+		position: relative
+		margin-top: 45px
+	&-block
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		justify-content: center
+		&.is-slider
+			z-index: 3
+			position: relative
+	&__slider-arrows
+		display: none
+		position: absolute		
+		left: 50%
+		width: 1480px
+		top: 50%
+		transform: translate(-50%, -50%)				
+		&.is-visible
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex			
+
+.certificate
+	width: 25%
+	display: -webkit-flex!important
+	display: -moz-flex!important
+	display: -ms-flex!important
+	display: -o-flex!important
+	display: flex!important
+	align-items: center
+	justify-content: center
+	padding: 0 30px
+	& > img
+		display: inline-block
+		max-width: 100%		
+		width: auto
+
+@media only screen and (max-width : 1499px)	
+
+	.certificates
+		&-wrap
+			padding-left: 30px
+			padding-right: 30px
+		&__slider-arrows
+			width: 100%
+			transform: translateY(-50%)
+			left: 0px
+			right: 0px
+
+@media only screen and (max-width : 1199px)	
+
+	.certificates
+		padding: 70px 0
+
+@media only screen and (max-width : 991px)	
+
+	.certificate
+		padding: 0 20px
+
+@media only screen and (max-width : 767px)	
+
+	.certificate
+		width: 33.33%
+
+@media only screen and (max-width : 575px)	
+
+	.certificates
+		&-wrap
+			padding-left: 0px
+			padding-right: 0px
+			margin-left: -20px
+			margin-right: -20px
+		&__slider-arrows
+			&.is-visible
+				display: none
+
+	.certificate		
+		padding: 0 
+		width: 100%
+		margin: 0 20px

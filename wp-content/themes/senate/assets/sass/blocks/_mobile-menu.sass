@@ -1,0 +1,239 @@
+.mobile-menu
+	&__logo
+		display: none
+		width: 150px
+		position: absolute
+		left: 20px
+		top: 30px
+	&__bot
+		display: none
+	&__hamburger
+		position: absolute
+		top: 20px
+		right: 20px
+		z-index: 2
+		display: none!important
+
+@media only screen and (max-width : 1199px)		
+
+	.mobile-menu	
+		&__logo
+			display: inline-block			
+		&__bot
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+			flex-direction: column
+			align-items: flex-start
+			justify-content: flex-start
+			text-align: left
+			margin-left: 0
+			width: 280px
+			padding: 30px 20px
+			color: $text-color
+			margin-top: 5px
+			background-color: $body-bg
+
+			.social
+				margin-top: 10px
+
+			.contact
+				margin-bottom: 10px
+				&__info
+					color: $text-color
+					a
+						color: $text-color
+						&:hover
+							color: $accent-color
+
+		&__btn
+			margin-top: 25px
+			&:hover
+				padding: 0 33px
+			&:active
+				padding: 0 37px
+
+		&__hamburger
+			display: -webkit-flex!important
+			display: -moz-flex!important
+			display: -ms-flex!important
+			display: -o-flex!important
+			display: flex!important			
+
+	.overlay	
+		background-color: rgba($dark-color, .8)
+		opacity: 0
+		transition: all .3s linear
+		visibility: hidden
+		position: fixed
+		top: 0
+		height: 100vh
+		left: 0
+		right: 0
+		z-index: 20
+		cursor: pointer
+		&.is-visible
+			opacity: 1
+			visibility: visible
+
+	.menu-block
+		position: fixed
+		top: 0
+		left: 0
+		width: 280px
+		height: 100%
+		max-height: 100vh
+		z-index: 20		
+		overflow: hidden
+		overflow-y: auto
+		-webkit-overflow-scrolling: touch	
+		display: block
+		margin-left: -100%
+		transition: margin-left .5s		
+		margin-top: 0		
+		background-color: $bg-color
+		color: $text-color
+		padding: 90px 0 0
+		border: none
+		box-shadow: none
+		.container
+			padding: 0
+		&.noscroll-y
+			overflow-y: hidden
+		&.visible
+			margin-left: 0 
+
+	.menu		
+		height: auto
+		padding: 0 
+		margin-left: 0
+		width: 100%
+		border: none
+		&__list			
+			margin: 0
+			flex-direction: column
+			align-items: flex-start
+		&__item
+			width: 100%
+			padding: 0 
+			margin: 0
+			position: static	
+			line-height: 1
+			margin-bottom: 5px
+			&:last-child
+				margin-bottom: 0
+			& + .menu__item
+				margin-left: 0			
+			&:hover,
+			&.active
+				.menu__link
+					background-color: $accent-color
+					color: $white
+					&:after
+						background-image: url('../img/drop-down-active.svg')	
+
+				.submenu
+					opacity: 0
+					visibility: hidden
+					&.slide
+						opacity: 1
+						visibility: visible					
+
+		&__link
+			width: 100%
+			line-height: 1.2			
+			white-space: normal
+			transition: color .2s				
+			height: auto
+			padding: 15px 55px 15px 25px
+			transition: background-color .2s, color .2s 	
+			font-size: 14px		
+			background-color: $body-bg
+			&:after				
+				transform: rotate(-90deg) translateX(50%)
+				right: 	15px			
+				top: calc(50% + 2px)	
+					
+		&__back			
+			cursor: pointer
+			display: inline-block				
+			user-select: none
+			font-size: 14px
+			text-transform: uppercase			
+			width: 45px
+			height: 45px
+			position: absolute
+			text-indent: -9999px
+			top: 20px
+			right: 20px
+			z-index: 2
+			background-image: url('../img/go-back.svg'), $gradient
+			background-size: 16px, auto
+			background-position: center
+			background-repeat: no-repeat
+			
+		&__title
+			display: block			
+			line-height: 1.2
+			transition: color .2s
+			font-size: 14px			
+			text-transform: uppercase
+			padding: 15px 25px	
+			color: $white		
+			background-color: $body-bg
+			margin-bottom: 5px
+			&:hover
+				background-color: $accent-color
+				color: $white
+
+	.submenu
+		transition: transform .2s linear, opacity .2s linear, visibility .2s linear		
+		border: none
+		position: fixed
+		top: 0
+		left: 0
+		height: 100%
+		max-height: 100vh
+		transform: translateX(100%)
+		min-width: auto
+		width: 280px
+		overflow-y: auto
+		-webkit-overflow-scrolling: touch			
+		padding: 0
+		opacity: 0		
+		visibility: hidden		
+		cursor: default
+		position: fixed				
+		box-shadow: none
+		padding-top: 90px		
+		border-radius: 0		
+		background-color: $bg-color
+		&.slide
+			transform: translateX(0)
+			opacity: 1
+			visibility: visible
+			z-index: 2	
+			.submenu-2
+				opacity: 1
+				visibility: visible
+		&__item
+			margin-bottom: 5px
+			&:hover,
+			&.active
+				.submenu__link
+					color: $white
+					background-color: $accent-color		
+
+		&__link
+			width: 100%
+			line-height: 1.2			
+			white-space: normal
+			transition: color .2s					
+			font-size: 14px
+			height: auto
+			padding: 15px 25px
+			color: $text-color
+			background-color: $body-bg
+			transition: background-color .2s, color .2s 		

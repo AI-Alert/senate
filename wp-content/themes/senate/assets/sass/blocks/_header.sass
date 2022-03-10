@@ -1,0 +1,353 @@
+.header
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	z-index: 20		
+	background-color: $body-bg
+	transition: box-shadow .2s
+	&.is-fixed
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)		
+		.hamburger
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex
+		.menu-block			
+			box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25)			
+		.navbar			
+			border-bottom: none
+			&-block
+				padding-right: 100px
+				height: 120px
+				padding-top: 25px
+
+.navbar	
+	border-bottom: 2px solid #384352
+	background-color: $body-bg
+	&-block
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		align-items: flex-start
+		justify-content: space-between		
+		height: 150px
+		padding-top: 40px
+		width: 100% 		
+		transition: padding-right .2s, padding-top .2s
+		position: relative
+	&__slogan
+		max-width: 170px
+		position: relative
+		top: -4px
+	&__time
+		max-width: 190px
+	&__phone
+		&_mobile
+			display: none		
+	&__btn
+		display: none
+	&__logo
+		flex-shrink: 0
+	&__social-block
+		max-width: 250px
+
+.hamburger	
+	cursor: pointer
+	padding: 12px 11px
+	z-index: 9
+	width: 45px
+	height: 45px
+	background-color: transparent	
+	flex-shrink: 0
+	user-select: none	
+	align-items: center
+	justify-content: center
+	border-radius: 0	
+	border: 2px solid $accent-color
+	display: none
+	transition: border-color .2s
+	position: absolute
+	right: 0
+	&:hover
+		opacity: 1	
+	.hamburger-box
+		width: 100%
+		height: 100%
+	.hamburger-inner,
+	.hamburger-inner::after,
+	.hamburger-inner::before		
+		height: 2px
+		width: 100%
+		border-radius: 0
+		background-color: $accent-color 
+	.hamburger-inner::after
+		top: 7px	
+	.hamburger-inner::before
+		top: 14px	
+	&.is-active		
+		border: 1px solid $text-color
+		.hamburger-inner,
+		.hamburger-inner::after,
+		.hamburger-inner::before	
+			background-color: $text-color
+		.hamburger-inner
+			top: 0px
+			&::after
+				top: 20px
+
+.menu	
+	height: 70px	
+	width: 100%		
+	&__back
+		display: none
+	&__title
+		display: none
+	&-block
+		position: relative			
+		height: 70px		
+		background-color: $body-bg		
+		transition: margin-top .2s
+		z-index: -1
+		&.is-hidden
+			margin-top: -70px
+			.menu__item--sub
+				&:hover
+					.submenu
+						opacity: 0
+						visibility: hidden
+	&__list
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		align-items: center
+		justify-content: space-between
+		width: 100%
+		height: 100%	
+	&__item
+		position: relative	
+		& + .menu__item
+			margin-left: 10px	
+		&--sub
+			&.active
+				.menu__link
+					&:after
+						background-image: url('../img/drop-down-active.svg')
+			.menu__link
+				position: relative
+				padding-right: 30px
+				&:after
+					display: inline-block
+					width: 24px
+					height: 24px
+					content: ''
+					position: absolute
+					top: 23px
+					right: 9
+					background-image: url('../img/drop-down.svg')
+					background-repeat: no-repeat
+					background-size: contain
+					background-position: center
+					transition: transform .2s
+
+		&:hover			
+			.submenu
+				opacity: 1
+				visibility: visible		
+		&.active
+			.menu__link
+				color: $white		
+	&__link		
+		color: $text-color
+		font-size: 14px			
+		display: inline-block	
+		white-space: nowrap		
+		line-height: 70px
+		height: 70px
+		transition: color .2s
+		text-transform: uppercase
+		padding: 0
+		position: relative	
+		font-weight: 500	
+		letter-spacing: 0.08em				
+
+.submenu
+	position: absolute	
+	top: 100%
+	left: 0
+	opacity: 0
+	visibility: hidden		
+	width: 400px
+	background-color: #384352
+	transition: opacity .2s, visibility .2s		
+	padding: 13px 0	
+	&__link		
+		font-size: 15px	
+		color: $white
+		display: block	
+		line-height: 1.2
+		padding: 9px 25px
+		transition: background-color .2s
+	&__item
+		&.active
+			.submenu__link
+				background-color: $accent-color	
+
+@media only screen and (min-width : 992px)	
+
+	.header	
+		&.open-popup
+			right: 17px			
+
+	.menu
+		&__item
+			&:hover
+				.menu__link
+					color: $accent-color
+			&--sub
+				&:hover
+					.menu__link
+						&:after
+							background-image: url('../img/drop-down-hover.svg')
+							transform: rotate(180deg)
+
+	.submenu
+		&__item
+			&:hover
+				.submenu__link
+					background-color: $accent-color
+
+@media only screen and (max-width : 1326px)				
+
+	.header
+		&.is-fixed
+			.navbar
+				&-block
+					padding-right: 70px
+
+	.submenu
+		width: 380px
+
+@media only screen and (max-width : 1199px)	
+
+	.header
+		position: fixed
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+		&.is-fixed
+			.navbar
+				&-block
+					padding-right: 0
+					padding-top: 0
+
+	.hamburger
+		margin-left: 30px
+		position: relative
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+
+	.navbar		
+		border-bottom: none
+		&-block
+			height: 120px		
+			padding-top: 0
+			align-items: center
+		&__time
+			display: none
+		&__slogan
+			margin-right: auto
+			margin-left: 30px
+		&__social-block
+			display: none
+
+@media only screen and (max-width : 991px)
+
+	.hamburger
+		margin-left: 20px
+
+	.header
+		&.is-fixed
+			.navbar-block
+				height: 80px
+
+	.navbar		
+		&-block
+			height: 80px		
+		&__logo
+			width: 145px
+		&__btn
+			height: 45px
+			display: inline-block
+			line-height: 45px
+			padding: 0 
+			width: 150px
+			font-size: 14px
+			flex-shrink: 0
+			&:hover
+				line-height: 41px
+			&:active
+				line-height: 41px
+				padding: 0
+		&__callback
+			display: none
+		&__slogan
+			font-size: 12px
+			margin-left: 20px
+		&__phone
+			&_mobile				
+				display: -webkit-flex
+				display: -moz-flex
+				display: -ms-flex
+				display: -o-flex
+				display: flex
+				align-items: center
+				justify-content: center
+				flex-shrink: 0
+				user-select: none		
+				background-color: transparent	
+				margin-left: 20px
+				img
+					width: 40px
+					height: 40px
+
+@media only screen and (max-width : 767px)		
+
+	.navbar		
+		&__slogan
+			display: none
+		&__logo
+			margin-right: auto
+
+@media only screen and (max-width : 479px)	
+
+	.hamburger
+		margin-left: 15px
+
+	.navbar	
+		&__btn
+			width: 80px
+			line-height: 1
+			margin-left: auto
+			&:hover
+				line-height: 1
+		&__logo
+			width: auto
+			max-width: 180px
+			flex-shrink: 1
+			margin-right: 20px
+		&__phone
+			&_mobile
+				margin-left: 15px
+
+@media only screen and (max-width : 374px)	
+
+	.navbar	
+		&__btn
+			display: none	

@@ -1,0 +1,184 @@
+.hero
+	position: relative	
+	&-block		
+		padding: 160px 0 225px
+		z-index: 3
+		.slick-dots
+			position: absolute
+			bottom: 50px
+			left: 0
+			right: 0
+			text-align: center
+	&__slider-arrows
+		display: none
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		width: 1480px
+		&.is-visible
+			display: -webkit-flex
+			display: -moz-flex
+			display: -ms-flex
+			display: -o-flex
+			display: flex			
+	&__info		
+		padding-right: 300px
+	&__title
+		font-weight: normal
+		margin: 0		
+		color: $white
+		font-size: 48px
+		font-weight: 700
+		line-height: 1.25
+	&__text		
+		max-width: 75%
+		font-size: 18px
+		margin-top: 30px
+		line-height: 1.7
+		p
+			&:nth-child(1)
+				margin-top: 0
+			&:last-child
+				margin-bottom: 0
+	&__btns
+		margin-top: 60px
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		align-items: center
+		justify-content: flex-start
+		.btn
+			padding: 0 42px
+			&:active
+				padding: 0 40px
+			& + .btn
+				margin-left: 30px
+			&--video
+				padding: 0 22px 0 80px
+				&:active
+					padding: 0 22px 0 80px
+
+	&__bgs,
+	&__bg
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+	&__bgs
+		z-index: -1
+		&:after
+			position: absolute
+			content: ''
+			display: block
+			top: 0
+			bottom: 0
+			left: 0
+			width: 77%
+			background: linear-gradient(90deg, #1C2127 0%, #1C2127 17%, rgba(28, 33, 39, 0) 100%)			
+		.slick-list,
+		.slick-track
+			position: absolute		
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0	
+	&__bg
+		background-color: #1C2127
+		background-repeat: no-repeat
+		background-size: cover
+		background-position: top center
+
+@media only screen and (max-width : 1499px)	
+
+	.hero
+		&__slider-arrows
+			width: calc(100% - 30px)
+			transform: translateY(-50%)
+			left: 15px
+			right: 15px
+
+@media only screen and (max-width : 1399px)	
+
+	.hero
+		&-block
+			padding: 70px 30px 100px
+		&__info
+			padding-right: 240px
+		&__bgs
+			&:after
+				width: 100%
+				background: linear-gradient(90deg, #1C2127 0%, #1C2127 17%, rgba(28, 33, 39, 0) 100%)			
+
+@media only screen and (max-width : 1199px)	
+
+	.hero
+		&-block
+			padding: 70px 20px 100px
+		&__info
+			padding-right: 50px
+		&__title
+			font-size: 42px
+		&__text
+			font-size: 16px
+		&__btns
+			margin-top: 50px
+
+@media only screen and (max-width : 991px)	
+
+	.hero	
+		&__info
+			padding-right: 0
+		&__text
+			max-width: 85%
+
+@media only screen and (max-width : 767px)	
+
+	.hero		
+		&-block
+			padding-left: 0
+			padding-right: 0
+		&__text
+			max-width: 100%
+		&__slider-arrows
+			&.is-visible
+				display: none
+		&__btns
+			.btn
+				padding: 0 32px
+				&:active
+					padding: 0 30px
+				& + .btn
+					margin-left: 20px
+				&--video
+					padding: 0 22px 0 80px
+					&:active
+						padding: 0 22px 0 80px
+
+@media only screen and (max-width : 575px)	
+
+	.hero
+		&-block
+			padding: 40px 0 90px
+			.slick-dots
+				bottom: 40px
+		&__bgs
+			&:after
+				background-image: linear-gradient(90deg, #1C2127 0%,  rgba(28, 33, 39, 0.5) 100%)
+		&__title
+			font-size: 32px
+		&__text
+			font-size: 14px
+			margin-top: 20px
+		&__btns
+			flex-direction: column
+			align-items: flex-start
+			margin-top: 40px
+			.btn
+				width: 250px
+				& + .btn
+					margin-left: 0
+					margin-top: 15px		

@@ -1,0 +1,193 @@
+.info
+	margin: 0
+	& > .container
+		max-width: 100%
+		padding-left: 0
+		padding-right: 0
+	&__item
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		justify-content: flex-start	
+		&:nth-child(2n)			
+			.info
+				&__foto
+					order: 1
+				&__text-block
+					margin-left: auto
+					padding: 100px 90px 100px 0px
+
+	&__foto
+		width: 50%
+		flex-shrink: 0
+		position: relative
+		& > img
+			@extend .object-fit
+
+		.info__play
+			position: absolute
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+			&:after
+				position: absolute
+				content: ''
+				display: block
+				top: 0
+				bottom: 0
+				left: 0
+				right: 0
+				background-color: rgba(#1C2127, .4)
+			.play				
+				z-index: 3
+				@extend .absolute-center
+				cursor: pointer	
+				width: 120px	
+				height: 120px	
+				border: none
+				background-color: $white
+				border-radius: 50%			
+				&:before
+					position: absolute
+					content: ''
+					display: inline-block
+					top: -40px
+					left: -40px
+					right: -40px
+					bottom: -40px
+					border: 1px solid rgba($white, .5)
+					border-radius: 50%
+					transition: all .2s
+					opacity: 1
+				&:after
+					position: absolute
+					content: ''
+					display: inline-block
+					top: -75px
+					left: -75px
+					right: -75px
+					bottom: -75px
+					border: 1px solid rgba($white, .2)
+					border-radius: 50%
+					transition: all .4s
+					opacity: 1
+				.svg					
+					width: 32px	
+					height: 27px	
+					margin-left: 2px
+					@extend .absolute-center		
+					path
+						transition: fill .2s			
+			&:hover							
+				.play
+					background-image: $gradient
+					&:after,
+					&:before
+						top: 0px
+						bottom: 0px
+						left: 0px
+						right: 0px
+						opacity: 0
+					.svg
+						path
+							fill: #fff
+
+	&__text-block
+		padding: 100px 0 100px 90px
+		width: 635px
+	&__btn
+		margin-top: 30px
+		padding: 0 32px
+	&__text
+		margin-top: 32px
+		p
+			&:nth-child(1)
+				margin-top: 0
+			&:last-child
+				margin-bottom: 0
+			& + p
+				margin-top: 25px
+
+@media only screen and (max-width : 1326px)	
+
+	.info
+		&__item
+			&:nth-child(2n)			
+				.info
+					&__text-block
+						padding: 50px 50px 50px 0px
+		&__text-block
+			width: 580px
+			padding: 50px 0 50px 50px
+
+@media only screen and (max-width : 1199px)	
+
+	.info
+		&__text-block
+			width: 460px
+
+@media only screen and (max-width : 991px)	
+
+	.info
+		&__item
+			flex-direction: column
+			align-items: center
+			&:nth-child(2n)			
+				.info
+					&__foto
+						order: -1
+					&__text-block
+						padding: 30px 0 50px
+						margin-left: 0
+
+		&__foto
+			width: 100%
+			height: auto
+			& > img
+				position: relative
+				top: auto
+				left: auto
+				right: auto
+				bottom: auto
+		&__text-block
+			padding: 30px 0 50px		
+			width: 680px
+
+@media only screen and (max-width : 767px)	
+
+	.info
+		&__text-block
+			width: 500px
+
+@media only screen and (max-width : 575px)	
+
+	.info
+		&__item
+			&:nth-child(2n)			
+				.info
+					&__text-block
+						padding: 30px 20px 40px
+		&__text-block
+			padding: 30px 20px 40px
+			width: 100%
+		&__foto
+			.info__play				
+				.play				
+					width: 80px	
+					height: 80px	
+					&:before
+						position: absolute
+						content: ''
+						display: inline-block
+						top: -15px
+						left: -15px
+						right: -15px
+						bottom: -15px
+					&:after
+						top: -40px
+						left: -40px
+						right: -40px
+						bottom: -40px

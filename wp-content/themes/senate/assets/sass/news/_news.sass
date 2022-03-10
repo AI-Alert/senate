@@ -1,0 +1,236 @@
+.news
+	&-grid
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		justify-content: flex-start		
+		flex-wrap: wrap
+		margin-top: 45px
+		margin-left: -16px
+		margin-right: -16px
+		margin-bottom: -45px
+	&__btn
+		margin-top: 45px
+		left: 50%
+		transform: translateX(-50%)
+
+.new
+	width: 402px
+	position: relative	
+	margin: 0 16px 45px
+	padding-top: 270px		
+	background-color: $bg-color
+	&:nth-child(3n+2)
+		padding-top: 0
+		padding-bottom: 270px
+		.new
+			&__foto
+				top: auto
+				bottom: 0
+			&__foot
+				&:after
+					top: auto
+					bottom: -18px
+					transform: scale(1,-1)
+
+	&__foto
+		right: 0
+		height: 270px	
+		position: absolute
+		display: block	
+		top: 0
+		left: 0		
+		z-index: 2		
+		overflow: hidden
+		img
+			@extend .object-fit	
+	&__foot
+		padding: 25px 25px 30px			
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		flex-direction: column
+		align-items: flex-start			
+		position: relative
+		z-index: 2
+		height: 100%
+		&:after
+			position: absolute
+			content: ''
+			display: inline-block
+			width: 0
+			height: 0
+			border-style: solid
+			border-width: 0 16.5px 18px 16.5px
+			border-color: transparent transparent $bg-color transparent
+			top: -18px
+			left: 25px
+	&:hover
+		.new		
+			&__more
+				&:after
+					opacity: 1
+				.svg
+					path
+						fill: $white
+	&__title			
+		font-size: 18px
+		margin: 0			
+		display: block		
+		line-height: 1.5
+		color: $white
+		font-weight: 700
+	&__text
+		margin-bottom: 14px	
+		margin-top: 13px
+	&__date
+		font-size: 15px
+		line-height: 24px
+		white-space: nowrap
+		display: block
+		margin-top: auto
+		position: relative
+		background-image: url('../img/clock.svg')
+		background-repeat: no-repeat
+		background-size: 24px
+		background-position: left center
+		padding-left: 33px
+		height: 24px
+	&__more
+		position: absolute
+		display: inline-block
+		width: 45px
+		height: 45px
+		right: 0
+		bottom: 0
+		background-color: $dark-color
+		z-index: 2
+		transition: background-color .2s 
+		&:after
+			position: absolute
+			content: ''
+			top: 0
+			bottom: 0
+			left: 0
+			right: 0
+			display: block
+			background-image: $gradient
+			z-index: -1
+			opacity: 0
+			transition: opacity .2s
+		.svg
+			@extend .absolute-center
+			width: 24px
+			height: 24px
+			path
+				transition: fill .2s
+
+@media only screen and (max-width : 1326px)	
+
+	.news
+		&-grid
+			margin-left: -15px
+			margin-right: -15px
+
+	.new
+		width: calc(33.33% - 30px)
+		margin: 0 15px 45px
+		padding-top: 245px
+		&__foto
+			height: 245px
+		&:nth-child(3n+2)
+			padding-bottom: 245px			
+	
+@media only screen and (max-width : 1199px)	
+
+	.new		
+		padding-top: 195px		
+		&__foto
+			height: 195px
+		&:nth-child(3n+2)
+			padding-bottom: 195px			
+
+@media only screen and (max-width : 991px)	
+
+	.news
+		&-grid
+			margin-bottom: -40px
+			margin-left: -10px
+			margin-right: -10px
+
+	.new
+		width: calc(33.33% - 20px)
+		margin: 0 10px 40px
+		padding-top: 145px
+		&__foto
+			height: 145px
+		&:nth-child(3n+2)
+			padding-bottom: 145px			
+
+@media only screen and (max-width : 767px)	
+
+	.new
+		width: calc(50% - 20px)
+		padding-top: 160px
+		&__foto
+			height: 160px
+		&:nth-child(3n+2)
+			padding-bottom: 0
+			padding-top: 160px
+			.new
+				&__foto
+					bottom: auto
+					top: 0
+				&__foot
+					&:after
+						top: -18px
+						left: 25px
+						bottom: 0
+						transform: none
+
+@media only screen and (max-width : 575px)
+
+	.news	
+		&-grid		
+			margin-top: 30px
+		&__btn
+			margin-top: 30px
+
+	.new
+		padding-top: 140px
+		&:nth-child(3n+2)
+			padding-top: 140px
+		&__foot
+			padding: 20px
+		&__title
+			font-size: 16px
+		&__date
+			font-size: 13px	
+			padding-left: 30px
+		&__foto
+			height: 140px
+
+@media only screen and (max-width : 399px)
+
+	.news
+		&-grid
+			margin-left: 0
+			margin-right: 0
+			margin-bottom: 0
+
+	.new
+		margin-left: 0
+		margin-right: 0
+		margin-bottom: 20px
+		width: 100%
+		padding-top: 225px
+		&:last-child
+			margin-bottom: 0
+		&__foto
+			height: 225px
+		&:nth-child(3n+2)
+			padding-top: 225px

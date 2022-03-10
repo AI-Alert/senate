@@ -1,0 +1,217 @@
+.is-contacts
+	& + .footer
+		margin-top: 0
+
+.contacts-section
+	position: relative
+	padding: 100px 0
+	.breadcrumbs-block
+		margin-top: 0
+
+.contacts
+	margin-top: 33px
+	.contact
+		margin-top: 20px
+	&__btn
+		margin-top: 30px
+		padding: 0 30px
+		&:hover
+			padding: 0 28px
+		&:active
+			padding: 0 32px
+	&__social
+		margin-top: 20px
+		.social
+			&__link:not(:hover)
+				.svg
+					path
+						fill: $text-color				
+
+	&-block
+		position: relative
+		display: inline-block
+		padding: 38px 40px 40px
+		z-index: 2
+		background-color: $body-bg
+		width: 360px
+	&__callback
+		margin-bottom: 25px
+		.phone__tels
+			a
+				font-weight: 400
+	.contacts__photo
+		position: absolute
+		left: 100%
+		width: 240px
+		height: 240px
+		bottom: 0
+		img
+			@extend .object-fit
+
+.map
+	position: absolute
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0
+	background-color: $white
+
+.map-popup
+	color: $white
+	text-align: left
+	width: 240px	
+	font-size: 15px
+	line-height: 1.5
+
+ymaps[class*="balloon"]	
+	background-color: transparent
+	box-shadow: none
+
+ymaps[class*="balloon__close"]		
+	background-color: transparent
+	box-shadow: none
+	border: 0
+
+ymaps[class*="balloon__close-button"]
+	background-image: url('../img/close-baloon.svg')
+	background-size: contain
+	opacity: 1
+	top: 0px
+	right: 0px
+	width: 24px
+	height: 24px
+	&:hover
+		background-image: url('../img/close-baloon-hover.svg')
+	 
+ymaps[class*="balloon__layout"]
+	background-color: $body-bg!important				
+	border: none
+	width: 300px	
+	box-shadow: none
+
+ymaps[class*="balloon__layout"]:after
+	display: none
+
+ymaps[class*="balloon__content"]
+	padding: 10px 40px 10px 20px!important		
+
+ymaps[class*="balloon__tail"]	
+	background: none	
+	bottom: auto
+	position: absolute
+	bottom: 0px
+	left: 22px
+	width: 18px
+	height: 18px
+	background-color: $body-bg
+	&:after
+		display: none
+
+@media only screen and (max-width : 1199px)	
+
+	.contacts-section
+		padding: 70px 0 
+
+	.contacts
+		&-block
+			width: 300px
+		.contacts__photo
+			width: 200px
+			height: 200px
+
+@media only screen and (max-width : 991px)	
+	
+	.contacts
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		flex-wrap: wrap
+		&-section
+			padding-top: 40px
+		&__btn
+			margin-top: 0px
+		&__social			
+			width: 50%
+			margin-top: 0
+			margin-left: auto
+		&__callback
+			width: 50%
+			margin-bottom: 20px			
+		.contact
+			width: 50%
+			margin-top: 0
+			margin-bottom: 20px			
+		&-block
+			width: 100%
+			padding: 0
+		.contacts__photo
+			width: auto
+			height: auto		
+			position: relative
+			left: auto
+			bottom: auto
+			margin-top: 20px
+			max-width: 100%
+			line-height: 0
+			img
+				position: relative
+				top: auto
+				bottom: auto
+				left: auto
+				right: auto
+
+	.map
+		position: relative
+		width: 100%
+		height: 400px
+		margin-top: 30px
+
+@media only screen and (max-width : 575px)
+
+	.contacts
+		&-section
+			padding-top: 30px
+			padding-bottom: 0
+		.contact
+			& > .svg,
+			& > img
+				margin-right: 10px
+		&__callback
+			& > .svg,
+			& > img
+				margin-right: 10px		
+
+	.map
+		margin-left: -20px
+		margin-right: -20px
+		width: calc(100% + 40px)
+
+	.map-popup
+		width: 200px	
+		font-size: 13px
+		 
+	ymaps[class*="balloon__layout"]		
+		width: 250px		
+
+@media only screen and (max-width : 479px)
+
+	.contacts
+		.contact
+			width: 100%
+			& > .svg,
+			& > img
+				margin-right: 15px
+		&__callback
+			width: 100%
+			margin-bottom: 25px
+			& > .svg,
+			& > img
+				margin-right: 15px
+			.phone__tels
+				a
+					font-size: 20px
+		&__social
+			width: 100%
+			margin-top: 20px

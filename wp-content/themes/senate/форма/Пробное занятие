@@ -1,0 +1,4 @@
+<div class="form__title form__title--services">Ваши данные</div>
+<div class="input-wrapper input-wrapper--main"><span class="input-name">Имя <strong>*</strong></span>[text* text-120 class:input-text]</div>
+<div class='input-wrapper'><span class="input-name"> Номер телефона <strong>*</strong></span>[tel* tel-121 class:input-text]</div>
+<div class="form__btn-wrapper submit-wrapper">[submit class:input-submit class:request-button class:input-submit--main class:btn class:btn-secondary "Записаться"]<div class="check-wrapper check-wrapper--services"><label><span class="wpcf7-list-item-label"><span class="input-check__text">Записываясь, вы подтверждаете что ознакомлены с <a href="#">политикой конфиденциальности</a> и согласны на <a href="#">обработку персональных данных</a></span></span></label></div></div>

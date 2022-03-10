@@ -4,7 +4,7 @@ get_template_part('template-parts/footer/template');
 
 ?>
 
-
+//шубидуби
 
 <?= carbon_get_theme_option( 'addones' ); ?>
 
